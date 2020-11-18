@@ -1,6 +1,11 @@
 <p>blogs</p>
 <p><%= link_to 'new', new_blog_path %></p>
 <% @blogs.each do |b| %>
-  <h1><%= b.title %></h1>
-  <p><%= b.text %></p>
+  <div class='boxMain'>
+    <h1><%= b.title %></h1>
+    <p><%= b.text %></p>
+    <p>Published at: <%= b.created_at.strftime("%d-%m-%Y") %></p>
+    <%= link_to 'edit', edit_blog_path(b.id) %> |
+    <%= link_to 'delete', blog_path(b.id), method: :delete %>
+  </div>
 <% end %>
