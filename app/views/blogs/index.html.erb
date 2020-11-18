@@ -5,7 +5,15 @@
     <h1><%= b.title %></h1>
     <p><%= b.text %></p>
     <p>Published at: <%= b.created_at.strftime("%d-%m-%Y") %></p>
-    <%= link_to 'edit', edit_blog_path(b.id) %> |
-    <%= link_to 'delete', blog_path(b.id), method: :delete %>
+    <p>
+      <%= link_to edit_blog_path(b.id) do %>
+        <i class="far fa-edit"></i>
+      <% end %>
+    </p>
+    <p>
+      <%= link_to blog_path(b.id), method: :delete do %>
+        <i class="far fa-trash-alt"></i>
+      <% end %>
+    </p>
   </div>
 <% end %>
