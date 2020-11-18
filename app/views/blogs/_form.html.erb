@@ -1,11 +1,14 @@
 <%= form_with(model: @blog, local: true) do |f| %>
+  <% if @blog.errors %>
+    <p><%= @blog.errors.full_messages.join(', ') %></p>
+  <% end %>
   <p>
     <%= f.label :title %>
     <%= f.text_field :title %>
   </p>
   <p>
     <%= f.label :text %>
-    <%= f.text_field :text %>
+    <%= f.text_area :text, size: '30x10' %>
   </p>
   <p>
     <%= f.submit 'save' %>
