@@ -1,0 +1,16 @@
+<%= form_with(model: @foto, local: true) do |f| %>
+  <% if @foto.errors %>
+    <p><%= @foto.errors.full_messages.join(', ') %></p>
+  <% end %>
+  <p>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :foto %>
+    <%= f.file_field :main_image %>
+  </p>
+  <p>
+    <%= f.submit 'Save' %>
+  </p>
+<% end %>
