@@ -1,1 +1,14 @@
-<p>fotos</p>
+<p>Fotos</p>
+<p><%= link_to 'back', root_path %></p>
+<p><%= link_to 'new', new_foto_path %></p>
+<% @fotos.each do |f| %>
+  <div class='boxMain'>
+    <p><%= f.title %></p>
+    <%= image_tag f.main_image, class: 'fotos' %>
+    <p>
+      <%= link_to foto_path(f.id), method: :delete do %>
+        <i class="far fa-trash-alt"></i>
+      <% end %>
+    </p>
+  </div>
+<% end %>
