@@ -1,4 +1,16 @@
 class FotosController < ApplicationController
+
+  def home
+    fotos = Foto.order(id: :desc)
+    array = []
+    fotos.each do |f|
+      f_hash = f.as_json
+      f_hash[:url] = url_for(f.main_image)
+      array.push f_hash
+    end
+    render json: array
+  end
+
   def index
     @fotos = Foto.all
   end
