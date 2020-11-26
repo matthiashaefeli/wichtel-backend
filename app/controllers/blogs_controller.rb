@@ -1,4 +1,9 @@
 class BlogsController < ApplicationController
+  def home
+    blog = Blog.order(id: :desc).as_json
+    render json: blog
+  end
+
   def index
     @blogs = Blog.all
   end
