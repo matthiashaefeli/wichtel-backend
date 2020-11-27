@@ -2,6 +2,10 @@ class Foto < ApplicationRecord
   has_one_attached :main_image
   validate :acceptable_image
 
+  def as_json
+    super.merge('created_at' => self.created_at.strftime("%d-%m-%Y"))
+  end
+
   def acceptable_image
     return unless main_image.attached?
 
