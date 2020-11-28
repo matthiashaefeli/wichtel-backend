@@ -5,7 +5,7 @@
     <p><b>Name:</b> <%= q.name %></p>
     <p><b>Email:</b> <%= q.email %></p>
     <p><b>Betreff:</b> <%= q.subject %></p>
-    <p><b>Nachricht:</b> %= q.message %></p>
+    <p><b>Nachricht:</b> <%= q.message %></p>
     <%= link_to 'Nachricht Loeschen', question_path(q.id), method: :delete %>
   </div>
 <% end %>
