@@ -1,4 +1,5 @@
 class FotosController < ApplicationController
+  before_action :authenticate_user!
 
   def home
     fotos = Foto.order(id: :desc)

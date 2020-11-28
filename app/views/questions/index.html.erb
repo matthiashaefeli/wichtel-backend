@@ -1,0 +1,9 @@
+<% @questions.each do |q| %>
+  <div class='questionsHome'>
+    <p><%= q.name %></p>
+    <p><%= q.email %></p>
+    <p><%= q.subject %></p>
+    <p><%= q.message %></p>
+    <%= link_to 'Nachricht Loeschen', question_path(q.id), method: :delete %>
+  </div>
+<% end %>

@@ -1,4 +1,6 @@
 class BlogsController < ApplicationController
+  before_action :authenticate_user!
+  
   def home
     blog = Blog.order(id: :desc).as_json
     render json: blog
