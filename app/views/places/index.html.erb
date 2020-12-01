@@ -1,0 +1,15 @@
+<p>Räumlichkeiten</p>
+<p><%= link_to 'Home', root_path %></p>
+<p><%= link_to 'New', new_place_path %></p>
+<% @places.each do |p| %>
+  <div class='boxMain'>
+    <p><%= p.title %></p>
+    <%= image_tag p.main_image, class: 'fotos' %>
+    <p><%= p.text %></p>
+    <p>
+      <%= link_to place_path(p.id), method: :delete do %>
+        <i class="far fa-trash-alt"></i>
+      <% end %>
+    </p>
+  </div>
+<% end %>
