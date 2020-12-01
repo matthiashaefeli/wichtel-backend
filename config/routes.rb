@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :fotos
   resources :blogs
   resources :questions
+  resources :places
   get '/fotos_home', to: 'fotos#home'
   get '/blog_home', to: 'blogs#home'
+  get '/place_home', to: 'places#home'
 end
