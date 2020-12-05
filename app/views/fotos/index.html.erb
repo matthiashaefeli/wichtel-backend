@@ -5,6 +5,7 @@
   <div class='boxMain'>
     <p><%= f.title %></p>
     <%= image_tag f.main_image, class: 'fotos' %>
+    <p><%= f.text %></p>
     <p>
       <%= link_to foto_path(f.id), method: :delete do %>
         <i class="far fa-trash-alt"></i>
