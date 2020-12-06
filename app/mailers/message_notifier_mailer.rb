@@ -1,5 +1,5 @@
 class MessageNotifierMailer < ApplicationMailer
-  default :from => 'tonja.haefeli@gmx.ch'
+  default :from => 'wichtelhuusboniswil@gmail.com'
 
   def send_new_message_email(message)
     @message = message
