@@ -3,7 +3,7 @@ class MessageNotifierMailer < ApplicationMailer
 
   def send_new_message_email(message)
     @message = message
-    mail( :to => 'mat@matyou.net',
+    mail( :to => 'tonja.haefeli@gmx.ch',
     :subject => 'Du hast eine neue Nachricht von WichtelHuus bekommen' )
   end
 end
