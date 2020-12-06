@@ -9,6 +9,8 @@ class QuestionsController < ApplicationController
   def create
     question = Question.new(question_params)
     if question.save
+      # Deliver message email
+      MessageNotifierMailer.send_new_message_email(question).deliver
       render json: 'saved'
     else
       render json: 'question.errors.full_messages'
