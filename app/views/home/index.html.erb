@@ -1,7 +1,6 @@
 <% if current_user %> 
   <p><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></p>
   <p><%= link_to "Ich moechte gerne die FOTOS seite bearbeiten", fotos_path %></p>
-  <p><%= link_to "Ich moechte gerne die NEUES seite bearbeiten", blogs_path %></p>
   <p><%= link_to "Ich moechte gerne die RÄUMLICHKEITEN seite bearbeiten", places_path %></p>
   <p><%= link_to "Ich moechte gerne die NACHRICHTEN lesen", questions_path %></p>
 <% else %>
